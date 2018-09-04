@@ -11,4 +11,8 @@ export class ContactsService {
   getContacts() {
     return CONTACT_DATA;
   }
+
+  getContact(id: string) {
+    return CONTACT_DATA.find(contact => contact.id.toString() === id);
+  }
 }

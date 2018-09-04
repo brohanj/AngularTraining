@@ -9,6 +9,7 @@ import { ContactsService } from 'src/app/contacts.service';
 })
 export class ContactsListComponent implements OnInit {
   public contacts: Array<Contact>;
+
   constructor(private contactsService: ContactsService) { }
 
   ngOnInit() {
