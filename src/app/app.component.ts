@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 // import { MatToolbar } from '@angular/material';
-import { Contact } from 'src/app/models/contact';
+// import { Contact } from 'src/app/models/contact';
 // import { CONTACT_DATA } from 'src/app/data/contact-data';
 import { ContactsService } from './contacts.service';
 

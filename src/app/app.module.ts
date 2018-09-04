@@ -3,7 +3,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ContactsMaterialModule } from './contacts-material.module';
-
+import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { APP_ROUTES } from './app.routes';
 
@@ -21,6 +21,7 @@ import { ContactsDetailComponent } from './contacts-detail/contacts-detail.compo
     BrowserAnimationsModule,
     ContactsMaterialModule,
     FlexLayoutModule,
+    HttpClientModule,
     RouterModule.forRoot(APP_ROUTES)
   ],
   bootstrap: [ContactsAppComponent]
