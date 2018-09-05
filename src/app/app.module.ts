@@ -14,6 +14,7 @@ import { ContactsListComponent } from './contacts-list/contacts-list.component';
 import { ContactsDetailComponent } from './contacts-detail/contacts-detail.component';
 import { API_ENDPOINT } from 'src/app/app.token';
 import { ContactsEditorComponent } from './contacts-editor/contacts-editor.component';
+import { ContactsDetailViewComponent } from './contacts-detail-view/contacts-detail-view.component';
 
 
 @NgModule({
@@ -21,7 +22,7 @@ import { ContactsEditorComponent } from './contacts-editor/contacts-editor.compo
     ContactsService ,
     { provide: API_ENDPOINT, useValue : 'http://localhost:4201/api' } // using injection tokens
   ], // commented out because of "providedIn :root"
-  declarations: [ContactsAppComponent, ContactsListComponent, ContactsDetailComponent, ContactsEditorComponent],
+  declarations: [ContactsAppComponent, ContactsListComponent, ContactsDetailComponent, ContactsEditorComponent, ContactsDetailViewComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
