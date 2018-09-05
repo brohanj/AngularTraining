@@ -51,4 +51,10 @@ export class ContactsService {
     return this.http.put<ContactsResponse>(url, contact)
       .pipe(map(data => data.items));
   }
+
+  search(term: string): Observable<Array<Contact>> {
+    const url = `http://localhost:4201/api/search?text=${term}`;
+    return this.http.get<ContactsResponse>(url)
+      .pipe(map(data => data.items));
+  }
 }

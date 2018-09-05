@@ -30,4 +30,8 @@ export class ContactsListComponent implements OnInit {
     return contact.id;
   }
 
+  public search(term: string) {
+    this.contacts$ = this.contactsService.search(term);
+  }
+
 }
