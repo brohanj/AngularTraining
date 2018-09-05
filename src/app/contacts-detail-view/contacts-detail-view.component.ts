@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Contact } from 'src/app/models/contact';
 import { ContactsService } from 'src/app/contacts.service';
+// import { Observable } from 'rxjs';
 
 @Component({
   selector: 'trm-contacts-detail-view',
@@ -9,6 +10,7 @@ import { ContactsService } from 'src/app/contacts.service';
   styleUrls: ['./contacts-detail-view.component.css']
 })
 export class ContactsDetailViewComponent implements OnInit {
+  // public contact$: Observable<Contact>;
   public contact: Contact;
 
   constructor(private route: ActivatedRoute, private router: Router, private contactsService: ContactsService) { }

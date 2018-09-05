@@ -7,9 +7,9 @@ import { Contact } from 'src/app/models/contact';
   styleUrls: ['./contacts-detail.component.css']
 })
 export class ContactsDetailComponent implements OnInit {
-  @Input() contact!: Contact;
+  @Input() contact: Contact;
   @Output() edit = new EventEmitter<Contact>();
-  @Output() back = new EventEmitter();
+  @Output() back = new EventEmitter<void>();
 
   constructor() { }
 

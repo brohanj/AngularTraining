@@ -15,14 +15,22 @@ import { ContactsDetailComponent } from './contacts-detail/contacts-detail.compo
 import { API_ENDPOINT } from 'src/app/app.token';
 import { ContactsEditorComponent } from './contacts-editor/contacts-editor.component';
 import { ContactsDetailViewComponent } from './contacts-detail-view/contacts-detail-view.component';
-
+import { TabsComponent } from './tabs/tabs/tabs.component';
+import { TabComponent } from './tabs/tab/tab.component';
 
 @NgModule({
   providers: [
     ContactsService ,
     { provide: API_ENDPOINT, useValue : 'http://localhost:4201/api' } // using injection tokens
   ], // commented out because of "providedIn :root"
-  declarations: [ContactsAppComponent, ContactsListComponent, ContactsDetailComponent, ContactsEditorComponent, ContactsDetailViewComponent],
+  declarations: [
+    ContactsAppComponent,
+    ContactsListComponent,
+    ContactsDetailComponent,
+    ContactsEditorComponent,
+    ContactsDetailViewComponent,
+    TabsComponent,
+    TabComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ContactsService } from '../contacts.service';
 import { Contact } from 'src/app/models/contact';
+import { TabsComponent } from 'src/app/tabs/tabs/tabs.component';
+import { TabComponent } from 'src/app/tabs/tab/tab.component';
 
 @Component({
   selector: 'trm-contacts-editor',
