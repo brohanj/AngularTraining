@@ -3,12 +3,12 @@
     <mat-card-title-group class="fullBleed">
       <img mat-card-md-image [src]="contact?.image" *ngIf="contact?.image">
       <mat-card-title>{{contact?.name}}</mat-card-title>
-      <mat-card-subtitle>{{contact?.email}}</mat-card-subtitle>
+      <mat-card-subtitle>{{contact?.email || 'No email address'}}</mat-card-subtitle>
     </mat-card-title-group>
     <mat-card-content>
       <dl>
         <dt>Phone:</dt>
-        <dd>{{contact?.phone}}</dd>
+        <dd>{{contact?.phone || '-'}}</dd>
         <dt>Website:</dt>
         <dd>{{contact?.website}}</dd>
         <dt>Birthday:</dt>
@@ -23,6 +23,8 @@
     </mat-card-content>
     <mat-card-actions fxLayout fxLayoutAlign="center center">
       <a mat-button title="Go back to list" [routerLink]="['']">Go Back</a>
+      <!-- <a mat-button title="Edit" [routerLink]="['/contact/', contact?.id, 'edit']">Edit</a> -->
+      <a mat-button [routerLink]="['edit']" title="Edit {{contact?.name}}">Edit</a>
     </mat-card-actions>
   </mat-card>
 </div>

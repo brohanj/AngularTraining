@@ -21,7 +21,7 @@ export class ContactsListComponent implements OnInit {
     });
   }
 
-  public trackById(index: number, contact: Contact) {
+  public trackByContactId(index: number, contact: Contact) {
     return contact.id;
   }
 
