@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 // import { CONTACT_DATA } from 'src/app/data/contact-data';
 import { ContactsService } from './contacts.service';
 import { EventBusService } from 'src/app/event-bus.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'trm-contacts-app',

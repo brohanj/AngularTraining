@@ -18,6 +18,11 @@ import { ContactsDetailViewComponent } from './contacts-detail-view/contacts-det
 import { TabsComponent } from './tabs/tabs/tabs.component';
 import { TabComponent } from './tabs/tab/tab.component';
 import { EventBusService } from 'src/app/event-bus.service';
+import { ContactsActions } from './state/contacts/contacts.actions';
+
+import { StoreModule } from '@ngrx/store';
+import { ROOT_REDUCER } from 'src/app/state/app.state';
+
 
 @NgModule({
   providers: [
@@ -40,7 +45,9 @@ import { EventBusService } from 'src/app/event-bus.service';
     FlexLayoutModule,
     HttpClientModule,
     FormsModule,
-    RouterModule.forRoot(APP_ROUTES)
+    RouterModule.forRoot(APP_ROUTES),
+    // ContactsActions,
+    StoreModule.forRoot(ROOT_REDUCER)
   ],
   bootstrap: [ContactsAppComponent]
 })

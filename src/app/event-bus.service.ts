@@ -11,10 +11,12 @@ export class EventBusService {
   private _messages$ = new Subject<EventBusArgs>();
 
   emit(eventType: string, data: any) {
+    console.log('emit');
     this._messages$.next({ type: eventType, data: data });
   }
 
   observe(eventType: string) {
+    console.log('observe');
     return this._messages$.pipe(
       filter(args => args.type === eventType),
       map(args => args.data)

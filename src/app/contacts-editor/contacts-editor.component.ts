@@ -26,6 +26,7 @@ export class ContactsEditorComponent implements OnInit {
     this.contactsService.getContact(id)
     .subscribe(contact => {
         this.contact = contact;
+        // this.eventBus.emit('appTitleChange', contact.name);
     });
   }
 
