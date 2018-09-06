@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 // import { Contact } from 'src/app/models/contact';
 // import { CONTACT_DATA } from 'src/app/data/contact-data';
 import { ContactsService } from './contacts.service';
+import { EventBusService } from 'src/app/event-bus.service';
 
 @Component({
   selector: 'trm-contacts-app',
@@ -10,44 +11,19 @@ import { ContactsService } from './contacts.service';
   styleUrls: ['./app.component.scss']
 })
 export class ContactsAppComponent implements OnInit {
-  // contacts = CONTACT_DATA;
-  // contacts: Contact[] = CONTACT_DATA;
-  // contacts: Array<Contact> = CONTACT_DATA;
-  // public contacts;
 
   title = 'Angular Master Class';
-
-  //  c1 = {
-  //   id: 6,
-  //   name: 'Diana Ellis',
-  //   email: '',
-  //   phone: '',
-  //   birthday: '',
-  //   website: '',
-  //   image: '/assets/images/6.jpg',
-  //   address: {
-  //     street: '6554 park lane',
-  //     zip: '43378',
-  //     city: 'Rush',
-  //     country: 'United States'
-  //   }
-  // };
 
   /**
    *
    */
-  constructor(private contactsService: ContactsService) {
+  constructor(private contactsService: ContactsService, private eventBus: EventBusService) {
   }
 
   ngOnInit() {
     // this.contacts = this.contactsService.getContacts();
+    this.eventBus.observe('appTitleChange')
+                 .subscribe(title => this.title = title);
   }
 
-  // refreshData() {
-  //   this.contacts = CONTACT_DATA.map(contact => ({ ...contact }));
-  // }
-
-  // public trackById(index: number, contact: Contact) {
-  //     return contact.id;
-  // }
 }

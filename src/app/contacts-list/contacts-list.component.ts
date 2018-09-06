@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { Contact } from 'src/app/models/contact';
 import { ContactsService } from 'src/app/contacts.service';
 import { Observable, merge } from 'rxjs';
 import { Subject } from 'rxjs/internal/Subject';
 import { debounceTime, distinctUntilChanged, switchMap, startWith } from 'rxjs/operators';
+import { EventBusService } from 'src/app/event-bus.service';
 
 @Component({
   selector: 'trm-contacts-list',
@@ -13,11 +14,14 @@ import { debounceTime, distinctUntilChanged, switchMap, startWith } from 'rxjs/o
 export class ContactsListComponent implements OnInit {
   public contacts$: Observable<Array<Contact>>;
   public terms$ = new Subject<string>();
+  @Output() title = new EventEmitter<EventBusService>();
 
-  constructor(private contactsService: ContactsService) { }
+  constructor(private contactsService: ContactsService, private eventBus: EventBusService) { }
 
   ngOnInit() {
+    this.eventBus.emit('appTitleChange', 'Content');
 
+    console.log('contact-list');
     // this.contacts$ = merge(
     //   this.terms$.pipe(
     //     debounceTime(400),

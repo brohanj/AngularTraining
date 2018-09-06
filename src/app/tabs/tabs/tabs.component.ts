@@ -7,16 +7,13 @@ import { TabComponent } from '../tab/tab.component';
   styleUrls: ['./tabs.component.css']
 })
 export class TabsComponent implements OnInit, AfterContentInit {
-  @ContentChildren(TabComponent)
+  @ContentChildren(TabComponent) // ask for type component or variable name
   tabs: QueryList<TabComponent>;
  // tabs: Array<TabComponent> = [];
 
-
   constructor() { }
 
-  ngOnInit() {
-
-  }
+  ngOnInit() {}
 
   ngAfterContentInit() {
     this.select(this.tabs.first);

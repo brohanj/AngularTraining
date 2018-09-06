@@ -17,10 +17,12 @@ import { ContactsEditorComponent } from './contacts-editor/contacts-editor.compo
 import { ContactsDetailViewComponent } from './contacts-detail-view/contacts-detail-view.component';
 import { TabsComponent } from './tabs/tabs/tabs.component';
 import { TabComponent } from './tabs/tab/tab.component';
+import { EventBusService } from 'src/app/event-bus.service';
 
 @NgModule({
   providers: [
     ContactsService ,
+    EventBusService ,
     { provide: API_ENDPOINT, useValue : 'http://localhost:4201/api' } // using injection tokens
   ], // commented out because of "providedIn :root"
   declarations: [
